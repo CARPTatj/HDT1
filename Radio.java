@@ -45,8 +45,8 @@ public class Radio implements iRadio {
         frequence = "AM";
         FMActualStation = 97.9;
         AMActualStation = 540;
-        slotAM = new int [13];
-        slotFM = new double [13];
+        slotAM = new int [12];
+        slotFM = new double [12];
         encendido = true;
     }
 
@@ -73,7 +73,7 @@ public class Radio implements iRadio {
 
     public boolean isOn() {
         // TODO Auto-generated method stub
-        return true;
+        return encendido;
     }
     public void setFrequence(String freq) {
         // TODO Auto-generated method stub
