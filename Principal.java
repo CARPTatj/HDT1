@@ -17,6 +17,10 @@ public class Principal{
     public static void main(String[] args) {
         Radio radio = new Radio();
         Scanner teclado = new Scanner(System.in);
+
+        /**
+         * Menu de opciones de la radio
+         */
         String menu = "==Bienvenido a la Radio==\n" +
         "Seleccione Lo que desea hacer\n" +
         "1. Prender la radio\n" +
