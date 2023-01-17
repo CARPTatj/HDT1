@@ -264,5 +264,15 @@ public class Radio implements iRadio {
         return slotAM[slot];
     }
 
+
+    @Override
+    public void saveAMStation(double actualStation, int slot) {
+        // TODO Auto-generated method stub
+        
+    }
+
+
+   
+
     
 }
