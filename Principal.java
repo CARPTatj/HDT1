@@ -19,9 +19,10 @@ public class Principal{
         "1. Prender la radio\n" +
         "2. Cambiar de AM a FM\n" +
         "3. Avanzar emisoras\n" +
-        "4. Guardar Emisora\n" + 
-        "5. Seleccionar Emisora\n" +
-        "6. Apagar radio";
+        "4. Retroceder emisoras\n" +
+        "5. Guardar Emisora\n" + 
+        "6. Seleccionar Emisora\n" +
+        "7. Apagar radio";
         int opcion = 1;
         int op = 0;
         while (opcion>=1 && opcion<6){
@@ -37,10 +38,10 @@ public class Principal{
                         op = teclado.nextInt();
                         teclado.nextLine();
                         if (op==1){
-                            System.out.println("Esta es la radio AM" + radio.getFrequence());
+                            System.out.println("Esta es la frecuencia AM" + radio.getFrequence());
                         }
                         if (op==2){
-                            System.out.println("Esta es la radio FM" + radio.getFrequence());
+                            System.out.println("Esta es la frecuencia FM" + radio.getFrequence());
                         }
                     break;
                     case 3:
@@ -48,6 +49,10 @@ public class Principal{
                     case 4:
                     break;
                     case 5:
+                    break;
+                    case 6:
+                    break;
+                    case 7:
                     break;
                     default:
                         System.out.println("Se apagó la radio");

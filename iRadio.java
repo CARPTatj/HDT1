@@ -8,7 +8,7 @@ public interface iRadio{
     public void on();
     public void off();
     public boolean isOn();
-    public void setFrequence(String freq);
+    public void setFrequence(String freq) throws Exception;
     public String getFrequence();
     public void Forward();
     public void Backward();
