@@ -7,6 +7,10 @@ import java.util.Scanner;
  * Clase Princiapl: es la unica que interactua con el usuario
  */
 public class Principal{
+    
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
         Radio radio = new Radio();
         Scanner teclado = new Scanner(System.in);
@@ -19,10 +23,37 @@ public class Principal{
         "5. Seleccionar Emisora\n" +
         "6. Apagar radio";
         int opcion = 1;
+        int op = 0;
         while (opcion>=1 && opcion<6){
             try{
                 System.out.println(menu);
                 opcion = teclado.nextInt();
+                teclado.nextLine();
+                switch(opcion){
+                    case 1:
+                    break;
+                    case 2:
+                        System.out.println("Coloque AM(1) o FM(2), dependiendo lo que desea escuchar");
+                        op = teclado.nextInt();
+                        teclado.nextLine();
+                        if (op==1){
+                            System.out.println("Esta es la radio AM" + radio.getFrequence());
+                        }
+                        if (op==2){
+                            System.out.println("Esta es la radio FM" + radio.getFrequence());
+                        }
+                    break;
+                    case 3:
+                    break;
+                    case 4:
+                    break;
+                    case 5:
+                    break;
+                    default:
+                        System.out.println("Se apagó la radio");
+
+                    break;
+                }
             }
             catch (Exception e){
                 teclado.nextLine();

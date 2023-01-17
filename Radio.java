@@ -12,30 +12,58 @@ public class Radio implements iRadio {
     private double[] slotFM;
     private boolean encendido;
 
+    
+    /** 
+     * @return int[]
+     */
     public int[] getSlotAM() {
         return this.slotAM;
     }
 
+    
+    /** 
+     * @param slotAM
+     */
     public void setSlotAM(int[] slotAM) {
         this.slotAM = slotAM;
     }
 
+    
+    /** 
+     * @return double[]
+     */
     public double[] getSlotFM() {
         return this.slotFM;
     }
 
+    
+    /** 
+     * @param slotFM
+     */
     public void setSlotFM(double[] slotFM) {
         this.slotFM = slotFM;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean isEncendido() {
         return this.encendido;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean getEncendido() {
         return this.encendido;
     }
 
+    
+    /** 
+     * @param encendido
+     */
     public void setEncendido(boolean encendido) {
         this.encendido = encendido;
     }
@@ -71,17 +99,37 @@ public class Radio implements iRadio {
         this.encendido = false;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean isOn() {
         // TODO Auto-generated method stub
         return encendido;
     }
+    
+    /** 
+     * @param freq
+     */
     public void setFrequence(String freq) {
         // TODO Auto-generated method stub
+        if (freq == "AM"){
+            freq.equalsIgnoreCase("AM");
+            this.frequence = freq.toUpperCase();
+        }
+        if (freq == "FM"){
+            freq.equalsIgnoreCase("FM");
+            this.frequence = freq.toUpperCase();
+        }
     }
+
+/** 
+ * @return String
+ */
 
     public String getFrequence() {
         // TODO Auto-generated method stub
-        return "";
+        return frequence;
     }
 
     public void Forward() {
@@ -92,36 +140,72 @@ public class Radio implements iRadio {
         // TODO Auto-generated method stub
     }
 
+/** 
+ * @return double
+ */
+
     public double getFMActualStation() {
         // TODO Auto-generated method stub
         return 23.3;
     }
 
+/** 
+ * @param actualStation
+ */
+
     public void setFMActualStation(double actualStation) {
         // TODO Auto-generated method stub
     }
+
+/** 
+ * @return int
+ */
 
     public int getAMActualStation() {
         // TODO Auto-generated method stub
         return 2;
     }
 
+/** 
+ * @param actualStation
+ */
+
     public void setAMActualStation(int actualStation) {
         // TODO Auto-generated method stub
     }
+
+/** 
+ * @param actualStation
+ * @param slot
+ */
 
     public void saveFMStation(double actualStation, int slot) {
         // TODO Auto-generated method stub
     }
 
+/** 
+ * @param actualStation
+ * @param slot
+ */
+
     public void saveAMStation(double actualStation, int slot) {
         // TODO Auto-generated method stub
     }
+
+/** 
+ * @param slot
+ * @return double
+ */
 
     public double getDMSlot(int slot) {
         // TODO Auto-generated method stub
         return 23.3;
     }
+
+/** 
+ * @param slot
+ * @return int
+ */
 
     public int getAMSlot(int slot) {
         // TODO Auto-generated method stub
