@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 /*
  * @author: Alina CARÍAS (22539), Daniel Machic (22118), Marcos Díaz (221102)
  * @author: Alina CARÍAS (22539), Daniel Machic (22), Marcos Díaz (221102)
@@ -23,16 +25,22 @@ public class Principal{
         "4. Retroceder emisoras\n" +
         "5. Guardar Emisora\n" + 
         "6. Seleccionar Emisora\n" +
-        "7. Apagar radio";
+        "7. Apagar radio\n" +
+        "8. Salir";
         int opcion = 1;
+        boolean encendido = false;
         int op = 0;
-        while (opcion>=1 && opcion<6){
+        String a = "";
+        while (opcion>=1 && opcion<=7){
             try{
                 System.out.println(menu);
                 opcion = teclado.nextInt();
                 teclado.nextLine();
                 switch(opcion){
                     case 1:
+                        System.out.println("La radio esta encendida");
+                        encendido = true;
+                        System.out.println(encendido);
                     break;
                     case 2:
                         System.out.println("Coloque AM(1) o FM(2), dependiendo lo que desea escuchar");
@@ -46,17 +54,7 @@ public class Principal{
                         }
                     break;
                     case 3:
-                    accion = 0;
-                    System.out.println("1. Subir");
-                    System.out.println("2. Bajar");
-
-                    accion = Integer.parseInt(teclado.nextLine());
-
-                    if(accion != 1){
-                        radio.Backward(-10);
-                    }else{
-                        radio.Forward(10);
-                    } 
+        
                     break;
                     case 4:
                     break;
@@ -65,10 +63,24 @@ public class Principal{
                     case 6:
                     break;
                     case 7:
+                        if(encendido == true){
+                            System.out.println("Deseas apagar la radio?");
+                            a = teclado.nextLine();
+                            if(a.equals("Si")){
+                                System.out.println("La radio esta apagada");
+                                encendido = false;
+                            }else if(a.equals("No")){
+                                System.out.println("La radio seguira encendida");
+                            }
+                        }else if(encendido == false){
+                            System.out.println("La radio ya esta apagada");
+                        }
+                    break;
+                    case 8:
+                        System.out.println("Gracias por usar el programa");
                     break;
                     default:
-                        System.out.println("Se apagó la radio");
-
+                        System.out.println("Entrada incorrecta, vuelve a intentarlo");
                     break;
                 }
             }
