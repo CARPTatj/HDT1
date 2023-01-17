@@ -1,5 +1,5 @@
 /*
- * @author: Alina CARÍAS (22539), Daniel Machic (22), Marcos Díaz (22)
+ * @author: Alina CARÍAS (22539), Daniel Machic (22), Marcos Díaz (221102)
  * @Date: 16/01/2023
  * Sección: 40
  * Clase case que implementa la interfaz: clase controladora, crea los métodos que se utilizarán en la principal.
@@ -101,11 +101,17 @@ public class Radio implements iRadio {
      * Metodos de la interface de iRadio
      */
 
+    /**
+     * Este metodo enciende la radio
+     */
     public void on() {
         // TODO Auto-generated method stub
         encendido = true;
     }
 
+    /**
+     * Este metodo apaga la radio
+     */
     public void off() {
         // TODO Auto-generated method stub
         encendido = false;
@@ -113,6 +119,7 @@ public class Radio implements iRadio {
 
     /** 
      * @return boolean
+     * Este metodo dice el estado actual de la radio
      */
     public boolean isOn() {
         // TODO Auto-generated method stub
@@ -121,6 +128,7 @@ public class Radio implements iRadio {
     
     /** 
      * @param freq
+     * Este metodo establece la frecuencia de la radio
      */
     public void setFrequence(String freq) {
         // TODO Auto-generated method stub
@@ -136,12 +144,16 @@ public class Radio implements iRadio {
 
     /** 
     * @return String
+    * Este metodo obtiene la frecuencia
     */
     public String getFrequence() {
         // TODO Auto-generated method stub
         return frequence;
     }
 
+    /**
+     * Este metodo avanza en el dial de las emisoras
+     */
     public void Forward() {
         // TODO Auto-generated method stub
         if(frequence == "FM" && FMActualStation == 107.9){
@@ -157,6 +169,9 @@ public class Radio implements iRadio {
         }
     }
 
+    /**
+     * Este metodo retrocede en el dial de las emisoras
+     */
     public void Backward() {
         // TODO Auto-generated method stub
         if(frequence == "FM" && FMActualStation == 87.9){
@@ -174,6 +189,7 @@ public class Radio implements iRadio {
 
     /** 
     * @return double
+    * Este metodo obtiene la estacion actual de la frecuencia FM
      */
     public double getFMActualStation() {
         // TODO Auto-generated method stub
@@ -182,6 +198,7 @@ public class Radio implements iRadio {
 
     /** 
     * @param actualStation
+    Este metodo establece la estacion de la frecuencia FM
      */
     public void setFMActualStation(double actualStation) {
         // TODO Auto-generated method stub
@@ -190,6 +207,7 @@ public class Radio implements iRadio {
 
     /** 
     * @return int
+    * Este metodo obtiene la estacion actual de la frecuencia AM
     */
     public int getAMActualStation() {
         // TODO Auto-generated method stub
@@ -198,6 +216,7 @@ public class Radio implements iRadio {
 
     /** 
     * @param actualStation
+    * Este metodo establece la estacion de la frecuencia AM
     */
     public void setAMActualStation(int actualStation) {
         // TODO Auto-generated method stub
@@ -206,6 +225,7 @@ public class Radio implements iRadio {
     /** 
     * @param actualStation
     * @param slot
+    * Este metodo guarda una estacion FM
     */
     public void saveFMStation(double actualStation, int slot) {
         // TODO Auto-generated method stub
@@ -214,6 +234,7 @@ public class Radio implements iRadio {
     /** 
     * @param actualStation
     * @param slot
+    * Este metodo guarda una estacion AM
      */
     public void saveAMStation(double actualStation, int slot) {
         // TODO Auto-generated method stub
@@ -222,6 +243,7 @@ public class Radio implements iRadio {
     /** 
     * @param slot
      * @return double
+     * Este metodo obtiene una estacion FM guardada
      */
     public double getDMSlot(int slot) {
         // TODO Auto-generated method stub
@@ -231,6 +253,7 @@ public class Radio implements iRadio {
     /** 
      * @param slot
      * @return int
+     * Este metodo obtiene una estacion AM guardada
     */
     public int getAMSlot(int slot) {
         // TODO Auto-generated method stub
