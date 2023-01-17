@@ -72,6 +72,7 @@ public interface iRadio{
 	 */
     public void saveFMStation(double actualStation, int slot);
 
+
     /**
 	 * Este metodo guarda una estacion AM en un boton
 	 * @param actualStation
@@ -89,5 +90,8 @@ public interface iRadio{
 	 * Este metodo establece una estacion AM guardada en un boton
 	 * @param slot
 	 */
+
+    public void saveAMStation(int actualStation, int slot);
+    public double getFMSlot(int slot);
     public int getAMSlot(int slot);
 }

@@ -202,6 +202,7 @@ public class Radio implements iRadio {
      */
     public void setFMActualStation(double actualStation) {
         // TODO Auto-generated method stub
+        FMActualStation = actualStation;
         
     }
 
@@ -220,6 +221,7 @@ public class Radio implements iRadio {
     */
     public void setAMActualStation(int actualStation) {
         // TODO Auto-generated method stub
+        AMActualStation = actualStation;
     }
 
     /** 
@@ -229,6 +231,7 @@ public class Radio implements iRadio {
     */
     public void saveFMStation(double actualStation, int slot) {
         // TODO Auto-generated method stub
+        slotFM[slot] = actualStation;
     }
 
     /** 
@@ -236,8 +239,9 @@ public class Radio implements iRadio {
     * @param slot
     * Este metodo guarda una estacion AM
      */
-    public void saveAMStation(double actualStation, int slot) {
+    public void saveAMStation(int actualStation, int slot) {
         // TODO Auto-generated method stub
+        slotAM[slot] = actualStation;
     }
 
     /** 
@@ -245,9 +249,9 @@ public class Radio implements iRadio {
      * @return double
      * Este metodo obtiene una estacion FM guardada
      */
-    public double getDMSlot(int slot) {
+    public double getFMSlot(int slot) {
         // TODO Auto-generated method stub
-        return 23.3;
+        return slotFM[slot];
     }
 
     /** 
@@ -257,7 +261,8 @@ public class Radio implements iRadio {
     */
     public int getAMSlot(int slot) {
         // TODO Auto-generated method stub
-        return 3;
+        return slotAM[slot];
     }
+
     
 }
