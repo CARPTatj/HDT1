@@ -17,7 +17,7 @@ public interface iRadio{
     public int getAMActualStation();
     public void setAMActualStation(int actualStation);
     public void saveFMStation(double actualStation, int slot);
-    public void saveAMStation(double actualStation, int slot);
-    public double getDMSlot(int slot);
+    public void saveAMStation(int actualStation, int slot);
+    public double getFMSlot(int slot);
     public int getAMSlot(int slot);
 }
