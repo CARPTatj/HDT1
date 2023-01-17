@@ -23,7 +23,25 @@ public class Radio implements iRadio {
      * @param encendido almacena el estado de la radio
      */
 
-    
+     public Radio() {
+        frequence = "";
+        FMActualStation = 97.9;
+        AMActualStation = 540;
+        slotAM = new int [12];
+        slotFM = new double [12];
+        encendido = true;
+    }
+
+
+    public Radio(String frequence, double FMActualStation, int AMActualStation, int[] slotAM, double[] slotFM, boolean encendido) {
+        this.frequence = frequence;
+        this.FMActualStation = FMActualStation;
+        this.AMActualStation = AMActualStation;
+        this.slotAM = slotAM;
+        this.slotFM = slotFM;
+        this.encendido = encendido;
+    }
+
     /** 
      * @return int[]
      */
@@ -79,38 +97,20 @@ public class Radio implements iRadio {
         this.encendido = encendido;
     }
 
-
-    public Radio() {
-        frequence = "";
-        FMActualStation = 97.9;
-        AMActualStation = 540;
-        slotAM = new int [12];
-        slotFM = new double [12];
-        encendido = true;
-    }
-
-
-    public Radio(String frequence, double FMActualStation, int AMActualStation, int[] slotAM, double[] slotFM, boolean encendido) {
-        this.frequence = frequence;
-        this.FMActualStation = FMActualStation;
-        this.AMActualStation = AMActualStation;
-        this.slotAM = slotAM;
-        this.slotFM = slotFM;
-        this.encendido = encendido;
-    }
-
+    /**
+     * Metodos de la interface de iRadio
+     */
 
     public void on() {
         // TODO Auto-generated method stub
-        this.encendido = true;
+        encendido = true;
     }
 
     public void off() {
         // TODO Auto-generated method stub
-        this.encendido = false;
+        encendido = false;
     }
 
-    
     /** 
      * @return boolean
      */
@@ -137,7 +137,6 @@ public class Radio implements iRadio {
     /** 
     * @return String
     */
-
     public String getFrequence() {
         // TODO Auto-generated method stub
         return frequence;
@@ -145,79 +144,94 @@ public class Radio implements iRadio {
 
     public void Forward() {
         // TODO Auto-generated method stub
+        if(frequence == "FM" && FMActualStation == 107.9){
+            FMActualStation = 87.9;
+        }else if(frequence == "FM" && FMActualStation < 107.9){
+            FMActualStation = FMActualStation + 0.2;
+        }
+
+        if(frequence == "AM" && AMActualStation == 1610){
+            AMActualStation = 530;
+        }else if( frequence == "AM" && AMActualStation < 1610){
+            AMActualStation = AMActualStation - 10;
+        }
     }
 
     public void Backward() {
         // TODO Auto-generated method stub
+        if(frequence == "FM" && FMActualStation == 87.9){
+            FMActualStation = 107.9;
+        }else if(frequence == "FM" && FMActualStation > 87.9){
+            FMActualStation = FMActualStation - 0.2;
+        }
+
+        if(frequence == "AM" && AMActualStation == 530){
+            AMActualStation = 1610;
+        }else if( frequence == "AM" && AMActualStation > 530){
+            AMActualStation = AMActualStation - 10;
+        }
     }
 
-/** 
- * @return double
- */
-
+    /** 
+    * @return double
+     */
     public double getFMActualStation() {
         // TODO Auto-generated method stub
-        return 23.3;
+        return FMActualStation;
     }
 
-/** 
- * @param actualStation
- */
-
+    /** 
+    * @param actualStation
+     */
     public void setFMActualStation(double actualStation) {
         // TODO Auto-generated method stub
+
     }
 
-/** 
- * @return int
- */
-
+    /** 
+    * @return int
+    */
     public int getAMActualStation() {
         // TODO Auto-generated method stub
-        return 2;
+        return AMActualStation;
     }
 
-/** 
- * @param actualStation
- */
-
+    /** 
+    * @param actualStation
+    */
     public void setAMActualStation(int actualStation) {
         // TODO Auto-generated method stub
     }
 
-/** 
- * @param actualStation
- * @param slot
- */
-
+    /** 
+    * @param actualStation
+    * @param slot
+    */
     public void saveFMStation(double actualStation, int slot) {
         // TODO Auto-generated method stub
     }
 
-/** 
- * @param actualStation
- * @param slot
- */
-
+    /** 
+    * @param actualStation
+    * @param slot
+     */
     public void saveAMStation(double actualStation, int slot) {
         // TODO Auto-generated method stub
     }
 
-/** 
- * @param slot
- * @return double
- */
-
+    /** 
+    * @param slot
+     * @return double
+     */
     public double getDMSlot(int slot) {
         // TODO Auto-generated method stub
         return 23.3;
     }
 
-/** 
- * @param slot
- * @return int
- */
-
+    /** 
+     * @param slot
+     * @return int
+    */
     public int getAMSlot(int slot) {
         // TODO Auto-generated method stub
         return 3;
