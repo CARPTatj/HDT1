@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 /*
  * @author: Alina CARÍAS (22539), Daniel Machic (22118), Marcos Díaz (221102)
+ * @author: Alina CARÍAS (22539), Daniel Machic (22), Marcos Díaz (221102)
  * @Date: 16/01/2023
  * Sección: 40
  * Clase Princiapl: es la unica que interactua con el usuario
