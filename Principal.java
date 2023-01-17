@@ -37,10 +37,10 @@ public class Principal{
                         op = teclado.nextInt();
                         teclado.nextLine();
                         if (op==1){
-                            System.out.println("Esta es la radio AM" + radio.getFrequence());
+                            System.out.println("Esta es la frecuencia AM" + radio.getFrequence());
                         }
                         if (op==2){
-                            System.out.println("Esta es la radio FM" + radio.getFrequence());
+                            System.out.println("Esta es la frecuencia FM" + radio.getFrequence());
                         }
                     break;
                     case 3:

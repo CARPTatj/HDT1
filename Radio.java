@@ -5,12 +5,23 @@
  * Clase case que implementa la interfaz: clase controladora, crea los métodos que se utilizarán en la principal.
  */
 public class Radio implements iRadio {
+
     private String frequence;
     private double FMActualStation;
     private int AMActualStation;
     private int[] slotAM;
     private double[] slotFM;
     private boolean encendido;
+
+    /**
+     * Parametros de la clase Radio
+     * @param frequence almacena la frecuencia de la radio
+     * @param FMActualStation almacena la estacion actual de la emisora FM
+     * @param AMActualStation almacena la estacion actual de la emisora AM
+     * @param slotAM almacena una emisora AM en un espacio (boton)
+     * @param slotFM almacena una emisora FM en un espacio (boton)
+     * @param encendido almacena el estado de la radio
+     */
 
     
     /** 
@@ -70,7 +81,7 @@ public class Radio implements iRadio {
 
 
     public Radio() {
-        frequence = "AM";
+        frequence = "";
         FMActualStation = 97.9;
         AMActualStation = 540;
         slotAM = new int [12];
@@ -123,9 +134,9 @@ public class Radio implements iRadio {
         }
     }
 
-/** 
- * @return String
- */
+    /** 
+    * @return String
+    */
 
     public String getFrequence() {
         // TODO Auto-generated method stub
