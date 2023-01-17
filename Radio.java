@@ -239,9 +239,9 @@ public class Radio implements iRadio {
     * @param slot
     * Este metodo guarda una estacion AM
      */
-    public void saveAMStation(int actualStation, int slot) {
+    public void saveAMStation(double actualStation, int slot) {
         // TODO Auto-generated method stub
-        slotAM[slot] = actualStation;
+        slotAM[slot] = AMActualStation;
     }
 
     /** 
